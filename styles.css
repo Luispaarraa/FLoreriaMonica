@@ -1,11 +1,18 @@
-body{
+:root{
+    --verde-principal:#A8AD4A;
+    --verde-oscuro:#8F943F;
+    --beige:#E7E0D6;
+    --blanco:#F8F6F1;
+    }
+    
+    body{
     font-family: Arial;
     margin:0;
-    background:#fff5f7;
+    background:var(--beige);
     }
     
     header{
-    background:#ff4d6d;
+    background:var(--verde-principal);
     color:white;
     padding:15px;
     display:flex;
@@ -20,11 +27,16 @@ body{
     font-weight:bold;
     }
     
+    nav a:hover{
+    text-decoration:underline;
+    }
+    
     .hero{
     text-align:center;
     padding:80px;
     background:url('https://images.unsplash.com/photo-1526045612212-70caf35c14df');
     background-size:cover;
+    background-position:center;
     color:white;
     }
     
@@ -36,12 +48,17 @@ body{
     }
     
     .card{
-    background:white;
+    background:var(--blanco);
     padding:15px;
     border-radius:10px;
     box-shadow:0px 0px 10px rgba(0,0,0,0.1);
     text-align:center;
     width:200px;
+    }
+    
+    .card:hover{
+    transform:scale(1.05);
+    transition:0.3s;
     }
     
     .card img{
@@ -60,6 +77,6 @@ body{
     footer{
     text-align:center;
     padding:20px;
-    background:#ff4d6d;
+    background:var(--verde-principal);
     color:white;
     }
