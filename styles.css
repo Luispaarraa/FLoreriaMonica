@@ -1,0 +1,65 @@
+body{
+    font-family: Arial;
+    margin:0;
+    background:#fff5f7;
+    }
+    
+    header{
+    background:#ff4d6d;
+    color:white;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    }
+    
+    nav a{
+    color:white;
+    margin:10px;
+    text-decoration:none;
+    font-weight:bold;
+    }
+    
+    .hero{
+    text-align:center;
+    padding:80px;
+    background:url('https://images.unsplash.com/photo-1526045612212-70caf35c14df');
+    background-size:cover;
+    color:white;
+    }
+    
+    .productos{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:40px;
+    }
+    
+    .card{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+    text-align:center;
+    width:200px;
+    }
+    
+    .card img{
+    width:100%;
+    border-radius:10px;
+    }
+    
+    .whatsapp{
+    background:#25D366;
+    color:white;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
+    }
+    
+    footer{
+    text-align:center;
+    padding:20px;
+    background:#ff4d6d;
+    color:white;
+    }
