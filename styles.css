@@ -159,7 +159,7 @@ nav a:hover::after { width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #25D366;
+  background: #667338;
   color: white;
   padding: 15px 32px;
   text-decoration: none;
@@ -167,10 +167,10 @@ nav a:hover::after { width: 100%; }
   font-weight: 700;
   font-size: 0.95rem;
   transition: 0.3s;
-  box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+  box-shadow: 0 8px 25px rgba(102, 115, 56, 1);
 }
 
-.whatsapp-main:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(37,211,102,0.45); }
+.whatsapp-main:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(102, 115, 56, 1); }
 
 .btn-secondary {
   display: inline-block;

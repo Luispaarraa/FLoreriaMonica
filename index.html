@@ -11,7 +11,6 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="styles.css"/>
 
-  <!-- Estilos para la animación fade-in (usada por script.js) -->
   <style>
     .fade-in {
       opacity: 0;
@@ -24,6 +23,85 @@
     }
     header {
       transition: transform 0.35s ease;
+    }
+
+    /* ── MAPA ── */
+    .mapa-wrap {
+      max-width: 750px;
+      margin: 30px auto 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid var(--verde-oliva);
+      box-shadow: 0 8px 30px rgba(166,169,91,0.2);
+      position: relative;
+    }
+
+    .mapa-wrap iframe {
+      width: 100%;
+      height: 300px;
+      display: block;
+      border: none;
+      filter: saturate(0.6) sepia(0.25) brightness(0.97);
+    }
+
+    .mapa-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(93,96,51,0.85));
+      padding: 20px 24px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mapa-info {
+      text-align: left;
+    }
+
+    .mapa-info strong {
+      display: block;
+      color: #d4e08a;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+
+    .mapa-info span {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+    }
+
+    .mapa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--verde-oliva);
+      color: white;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .mapa-btn:hover {
+      background: #d4e08a;
+      color: var(--verde-oscuro);
+      transform: translateY(-2px);
+    }
+
+    .horario-texto {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--texto);
+      opacity: 0.7;
+      letter-spacing: 0.03em;
     }
   </style>
 </head>
@@ -42,7 +120,7 @@
     <a href="#categorias">colecciones</a>
     <a href="#productos">flores</a>
     <a href="#nosotros">nosotros</a>
-    <a href="https://wa.me/5212221234567">pedir ahora</a>
+    <a href="https://wa.me/526624232258">pedir ahora</a>
   </nav>
 </header>
 
@@ -53,7 +131,7 @@
     <h2>Flores que <em>hablan</em><br>por tu corazón</h2>
     <p>Arreglos florales artesanales para cada momento especial. Cultivados con amor, entregados con cuidado.</p>
     <div class="hero-buttons">
-      <a class="whatsapp-main" href="https://wa.me/5212221234567">
+      <a class="whatsapp-main" href="https://wa.me/526624232258">
         💬 Pedir por WhatsApp
       </a>
       <a class="btn-secondary" href="#productos">Ver colección</a>
@@ -75,24 +153,24 @@
 
   <div class="categorias">
     <a href="#" class="categoria">
-      <img src="img/amarillas.png" alt="Rosas"/>
-      <p>Flores Amarillas</p>
+      <img src="img/amarillas.png" alt="Flores Amarillas"/>
+      <p>🌼 Flores Amarillas</p>
     </a>
     <a href="#" class="categoria">
-      <img src="img/ramons.png" alt="Girasoles"/>
-      <p>Arreglos</p>
+      <img src="img/ramons.png" alt="Arreglos"/>
+      <p>💐 Arreglos</p>
     </a>
     <a href="#" class="categoria">
-      <img src="img/ramo.png" alt="Orquídeas"/>
-      <p>Ramos</p>
+      <img src="img/ramo.png" alt="Ramos"/>
+      <p>🌹 Ramos</p>
     </a>
     <a href="#" class="categoria">
-      <img src="img/jaron.png" alt="Tulipanes"/>
-      <p>Jarrones</p>
+      <img src="img/jaron.png" alt="Jarrones"/>
+      <p>🏺 Jarrones</p>
     </a>
     <a href="#" class="categoria">
-      <img src="img/condolencia.png" alt="Arreglos"/>
-      <p>Condolencias</p>
+      <img src="img/condolencia.png" alt="Condolencias"/>
+      <p>🕊️ Condolencias</p>
     </a>
   </div>
 </section>
@@ -219,12 +297,29 @@
     </div>
   </div>
 
-  <p class="direccion">
-    <a href="https://www.google.com/maps/search/?api=1&query=Bulevar+L%C3%A1zaro+C%C3%A1rdenas+392b+Isssteson+Nte+83139+Hermosillo+Sonora+Mexico"
-      target="_blank" rel="noopener" class="link-maps">
-      📍 Bulevar Lázaro Cárdenas 392b, Isssteson Nte., 83139 Hermosillo, Son.
-    </a>
-    <span>Lunes a Viernes · 9:00 am – 7:00 pm · Sábado 10:00 – 5:00 · Domingo Cerrado</span>
+  <!-- ── MAPA EMBEBIDO ── -->
+  <div class="mapa-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3484.4!2d-110.9559!3d29.0729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce84b3e6a2e4c7%3A0x0!2sBulevar+L%C3%A1zaro+C%C3%A1rdenas+392b%2C+Isssteson+Nte.%2C+83139+Hermosillo%2C+Son.!5e0!3m2!1ses!2smx!4v1700000000000"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <div class="mapa-overlay">
+      <div class="mapa-info">
+        <strong>📍 Monica Solomon — Florería</strong>
+        <span>Blvd. Lázaro Cárdenas 392b, Isssteson Nte., Hermosillo, Son.</span>
+      </div>
+      <a class="mapa-btn"
+         href="https://www.google.com/maps/search/?api=1&query=Bulevar+L%C3%A1zaro+C%C3%A1rdenas+392b+Isssteson+Nte+83139+Hermosillo+Sonora+Mexico"
+         target="_blank" rel="noopener">
+        🗺️ Cómo llegar
+      </a>
+    </div>
+  </div>
+
+  <p class="horario-texto">
+    🕘 Lunes a Viernes · 9:00 am – 7:00 pm &nbsp;·&nbsp; Sábado 10:00 – 5:00 &nbsp;·&nbsp; Domingo Cerrado
   </p>
 
   <div class="redes">
@@ -240,7 +335,7 @@
   <strong>Monica Solomon — Florería Artesanal</strong>
   Hecho con 🌿 y mucho amor · Todos los derechos reservados © 2025
   <br/>
-  <small style="opacity:0.6;"> 📞 (662) 423-2258</small>
+  <small style="opacity:0.6;">📞 (662) 423-2258</small>
 </footer>
 
 <!-- WhatsApp flotante -->
