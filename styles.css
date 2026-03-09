@@ -1,19 +1,32 @@
+/* ══════════════════════════════════════
+   Monica Solomon — Florería Artesanal
+   styles.css
+══════════════════════════════════════ */
+
+/* ── VARIABLES ── */
 :root {
     --verde-oliva: #A6A95B;
+    --verde-oscuro: #5D6033;
     --crema-fondo: #FDF3E6;
+    --crema-oscuro: #F5E8D0;
     --texto: #5D6033;
-}
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
+    --blanco: #ffffff;
+  }
+  
+  /* ── BASE ── */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Lato', sans-serif;
     background-color: var(--crema-fondo);
     color: var(--texto);
-}
-
-header {
-    background: white;
-    padding: 20px 5%;
+    scroll-behavior: smooth;
+  }
+  
+  /* ── HEADER ── */
+  header {
+    background-color: var(--blanco);
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,218 +34,459 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-header h1 {
-    font-family: 'Georgia', serif;
+    box-shadow: 0 2px 12px rgba(166,169,91,0.1);
+  }
+  
+  .logo-container { display: flex; align-items: center; gap: 12px; }
+  
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     color: var(--verde-oliva);
-    margin: 0;
-    font-size: 1.5rem;
-    text-transform: lowercase;
-}
-
-nav a {
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+  
+  .logo-text span {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.58rem;
+    font-style: normal;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--verde-oscuro);
+    opacity: 0.7;
+  }
+  
+  .logo-icon {
+    font-size: 2rem;
+    animation: sway 4s ease-in-out infinite;
+  }
+  
+  @keyframes sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50%       { transform: rotate(5deg); }
+  }
+  
+  nav a {
     text-decoration: none;
     color: var(--texto);
-    margin-left: 15px;
-    font-weight: bold;
-}
-
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1526045612212-70caf35c14df');
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
-    padding: 40px 5%;
-}
-
-.card {
-    background: white;
-    width: 280px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.card:hover { transform: translateY(-10px); }
-
-.card img { width: 100%; height: 250px; object-fit: cover; }
-
-.card h3 { color: var(--verde-oliva); margin: 15px 0 5px; }
-
-.descripcion { font-size: 0.85rem; padding: 0 15px; color: #666; height: 40px; }
-
-.btn-catalogo {
-    display: inline-block;
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 2px;
     background: var(--verde-oliva);
+    transition: width 0.3s;
+  }
+  
+  nav a:hover { color: var(--verde-oliva); }
+  nav a:hover::after { width: 100%; }
+  
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 120px 20px;
+    background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)),
+      url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=1600&q=80') center/cover no-repeat;
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 20px;
-    margin: 15px 0 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.whatsapp-main {
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(93,96,51,0.3) 100%);
+  }
+  
+  .hero-content { position: relative; z-index: 1; }
+  
+  .hero-badge {
     display: inline-block;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeDown 0.8s ease both;
+  }
+  
+  .hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    animation: fadeDown 0.8s ease 0.15s both;
+  }
+  
+  .hero h2 em { font-style: italic; color: #d4e08a; }
+  
+  .hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+    animation: fadeDown 0.8s ease 0.3s both;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeDown 0.8s ease 0.45s both;
+  }
+  
+  .whatsapp-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: #25D366;
     color: white;
-    padding: 15px 30px;
+    padding: 15px 32px;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-footer {
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+  }
+  
+  .whatsapp-main:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(37,211,102,0.45); }
+  
+  .btn-secondary {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.7);
+    color: white;
+    padding: 13px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  
+  .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+  
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ── SECTION TITLE ── */
+  .section-title {
     text-align: center;
-    padding: 30px;
+    padding: 60px 5% 10px;
+  }
+  
+  .section-title h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--verde-oliva);
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+  
+  .section-title p {
+    color: var(--texto);
+    opacity: 0.65;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px auto 0;
+  }
+  
+  .divider-line { height: 1px; width: 60px; background: var(--verde-oliva); opacity: 0.4; }
+  .divider-icon { color: var(--verde-oliva); font-size: 1rem; }
+  
+  /* ── CATEGORÍAS ── */
+  #categorias { padding: 20px 5% 60px; }
+  
+  .categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .categoria {
+    width: 190px;
+    text-decoration: none;
+    color: var(--texto);
+    background: var(--blanco);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: 0.35s cubic-bezier(0.23,1,0.32,1);
+    border: 1px solid transparent;
+  }
+  
+  .categoria:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--verde-oliva);
+    box-shadow: 0 16px 35px rgba(166,169,91,0.2);
+  }
+  
+  .categoria img { width: 100%; height: 140px; object-fit: cover; }
+  
+  .categoria p {
+    padding: 12px 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  
+  /* ── PRODUCTOS ── */
+  #productos { background: var(--crema-oscuro); padding: 20px 5% 70px; }
+  
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .card {
+    background: var(--blanco);
+    width: 280px;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    text-align: center;
+    overflow: hidden;
+    transition: 0.35s cubic-bezier(0.23,1,0.32,1);
+    border: 1px solid transparent;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    border-color: var(--verde-oliva);
+    box-shadow: 0 20px 45px rgba(166,169,91,0.18);
+  }
+  
+  .card-img-wrap { position: relative; overflow: hidden; }
+  
+  .card img {
+    width: 100%; height: 240px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+  
+  .card:hover img { transform: scale(1.07); }
+  
+  .card-badge {
+    position: absolute;
+    top: 14px; left: 14px;
     background: var(--verde-oliva);
     color: white;
-}
-header {
-    background-color: white;
-    padding: 10px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #A6A95B; /* El verde de tu logo */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.main-logo {
-    height: 90px; /* Ajusta este número para hacer el logo más grande o pequeño */
-    width: auto;  /* Esto evita que el logo se estire */
-    transition: transform 0.3s ease;
-}
-
-.main-logo:hover {
-    transform: scale(1.05); /* Un pequeño movimiento al pasar el mouse */
-}
-
-nav a {
-    text-decoration: none;
-    color: #5D6033; /* Verde oscuro para las letras */
-    margin-left: 20px;
-    font-weight: bold;
-    text-transform: lowercase; /* Estilo moderno como tu marca */
-}
-
-/* Para que en el celular el logo y el menú se acomoden bien */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        padding: 20px;
-    }
-    nav {
-        margin-top: 15px;
-    }
-    .main-logo {
-        height: 70px;
-    }
-}
-#categorias{
-    text-align:center;
-    padding:40px 5%;
-    }
-    
-    .categorias{
-    display:flex;
-    flex-wrap:wrap;
-    gap:25px;
-    justify-content:center;
-    margin-top:30px;
-    }
-    
-    .categoria{
-    width:200px;
-    text-decoration:none;
-    color:var(--texto);
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 4px 10px rgba(0,0,0,0.05);
-    transition:0.3s;
-    }
-    
-    .categoria:hover{
-    transform:scale(1.05);
-    }
-    
-    .categoria img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    }
-    
-    .categoria p{
-    padding:10px;
-    font-weight:bold;
-    }
-    /* SOBRE NOSOTROS */
-
-#nosotros{
-    text-align:center;
-    padding:60px 20px;
-    font-family: 'Georgia', serif;
-    }
-    
-    #nosotros h2{
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+  }
+  
+  .card h3 {
+    font-family: 'Playfair Display', serif;
     color: var(--verde-oliva);
-    font-size:28px;
-    margin-bottom:20px;
-    }
-    
-    .descripcion-nosotros{
-    max-width:700px;
-    margin:auto;
-    font-size:16px;
-    line-height:1.6;
-    }
-    
-    .direccion{
-    margin-top:25px;
-    font-size:18px;
-    font-weight:bold;
-    }
-    
-    .redes{
-    margin-top:25px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    }
-    
-    .redes a{
-    text-decoration:none;
-    background:var(--verde-oliva);
-    color:white;
-    padding:10px 18px;
-    border-radius:25px;
-    font-size:14px;
-    transition:0.3s;
-    }
-    
-    .redes a:hover{
-    transform:scale(1.05);
-    }
+    margin: 18px 0 6px;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .card .precio {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-bottom: 6px;
+  }
+  
+  .descripcion {
+    font-size: 0.82rem;
+    padding: 0 18px;
+    color: #888;
+    line-height: 1.5;
+    min-height: 38px;
+  }
+  
+  .btn-catalogo {
+    display: inline-block;
+    background: var(--verde-oliva);
+    color: white;
+    padding: 10px 22px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 16px 0 22px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+  
+  .btn-catalogo:hover { background: var(--verde-oscuro); transform: scale(1.05); }
+  
+  /* ── NOSOTROS ── */
+  #nosotros {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--blanco);
+  }
+  
+  #nosotros h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--verde-oliva);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  .descripcion-nosotros {
+    max-width: 680px;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--texto);
+    opacity: 0.85;
+  }
+  
+  .nosotros-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 45px 0;
+  }
+  
+  .feature { max-width: 180px; text-align: center; }
+  
+  .feature-icon { font-size: 2.2rem; margin-bottom: 10px; }
+  
+  .feature h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--verde-oliva);
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  
+  .feature p { font-size: 0.82rem; opacity: 0.7; line-height: 1.5; }
+  
+  .direccion {
+    margin-top: 30px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+  }
+  
+  .direccion span {
+    display: block;
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    opacity: 0.75;
+  }
+  
+  .redes {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  
+  .redes a {
+    text-decoration: none;
+    background: var(--verde-oliva);
+    color: white;
+    padding: 11px 22px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  
+  .redes a:hover { background: var(--verde-oscuro); transform: translateY(-3px); }
+  
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: var(--verde-oscuro);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+  
+  footer strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #d4e08a;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  /* ── WHATSAPP FLOTANTE ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    background: #25D366;
+    color: white;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+    z-index: 999;
+    transition: 0.3s;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  
+  .whatsapp-float:hover { transform: scale(1.1); }
+  
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(37,211,102,0.45); }
+    50%       { box-shadow: 0 6px 30px rgba(37,211,102,0.7); }
+  }
+  
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    header { flex-direction: column; padding: 16px; gap: 12px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+    nav a { margin-left: 8px; font-size: 0.8rem; }
+    .hero { padding: 80px 16px; }
+    .nosotros-features { gap: 25px; }
+  }
