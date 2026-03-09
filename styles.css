@@ -252,7 +252,14 @@ nav a:hover::after { width: 100%; }
   box-shadow: 0 16px 35px rgba(166,169,91,0.2);
 }
 
-.categoria img { width: 100%; height: 140px; object-fit: cover; }
+.categoria img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.categoria:hover img { transform: scale(1.12); }
 
 .categoria p {
   padding: 12px 10px;
