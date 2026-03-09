@@ -1,0 +1,38 @@
+<div class="productos">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=500" alt="Arreglo Floral">
+            <h3>Diseño Floral 1</h3>
+            <p class="descripcion">Composición elegante con el sello distintivo de nuestra casa.</p>
+            <a class="btn-catalogo" href="https://wa.me/p/25275918518689868/5216624232258" target="_blank">Ver en WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500" alt="Arreglo Floral">
+            <h3>Diseño Floral 2</h3>
+            <p class="descripcion">Ramo vibrante seleccionado con las flores más frescas del día.</p>
+            <a class="btn-catalogo" href="https://wa.me/p/7426948010705274/5216624232258" target="_blank">Ver en WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500" alt="Arreglo Floral">
+            <h3>Diseño Floral 3</h3>
+            <p class="descripcion">Detalle moderno y orgánico para cualquier espacio.</p>
+            <a class="btn-catalogo" href="https://wa.me/p/26052418127691118/5216624232258" target="_blank">Ver en WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4?w=500" alt="Arreglo Floral">
+            <h3>Diseño Floral 4</h3>
+            <p class="descripcion">Combinación clásica de rosas con follaje fino.</p>
+            <a class="btn-catalogo" href="https://wa.me/p/9923372364431431/5216624232258" target="_blank">Ver en WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500" alt="Arreglo Floral">
+            <h3>Diseño Floral 5</h3>
+            <p class="descripcion">Armonía de colores y texturas naturales.</p>
+            <a class="btn-catalogo" href="https://wa.me/p/23975452542155920/5216624232258" target="_blank">Ver en WhatsApp</a>
+        </div>
+
+        </div>
