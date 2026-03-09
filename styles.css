@@ -1,65 +1,153 @@
-body{
-    font-family: Arial;
-    margin:0;
-    background:#fff5f7;
+:root {
+    --verde-oliva: #A6A95B;
+    --crema-fondo: #FDF3E6;
+    --texto: #5D6033;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--crema-fondo);
+    color: var(--texto);
+}
+
+header {
+    background: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--verde-oliva);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    color: var(--verde-oliva);
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1526045612212-70caf35c14df');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 40px 5%;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+.card img { width: 100%; height: 250px; object-fit: cover; }
+
+.card h3 { color: var(--verde-oliva); margin: 15px 0 5px; }
+
+.descripcion { font-size: 0.85rem; padding: 0 15px; color: #666; height: 40px; }
+
+.btn-catalogo {
+    display: inline-block;
+    background: var(--verde-oliva);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin: 15px 0 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.whatsapp-main {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--verde-oliva);
+    color: white;
+}
+header {
+    background-color: white;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #A6A95B; /* El verde de tu logo */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    height: 90px; /* Ajusta este número para hacer el logo más grande o pequeño */
+    width: auto;  /* Esto evita que el logo se estire */
+    transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+    transform: scale(1.05); /* Un pequeño movimiento al pasar el mouse */
+}
+
+nav a {
+    text-decoration: none;
+    color: #5D6033; /* Verde oscuro para las letras */
+    margin-left: 20px;
+    font-weight: bold;
+    text-transform: lowercase; /* Estilo moderno como tu marca */
+}
+
+/* Para que en el celular el logo y el menú se acomoden bien */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
     }
-    
-    header{
-    background:#ff4d6d;
-    color:white;
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    nav {
+        margin-top: 15px;
     }
-    
-    nav a{
-    color:white;
-    margin:10px;
-    text-decoration:none;
-    font-weight:bold;
+    .main-logo {
+        height: 70px;
     }
-    
-    .hero{
-    text-align:center;
-    padding:80px;
-    background:url('https://images.unsplash.com/photo-1526045612212-70caf35c14df');
-    background-size:cover;
-    color:white;
-    }
-    
-    .productos{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    padding:40px;
-    }
-    
-    .card{
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0px 0px 10px rgba(0,0,0,0.1);
-    text-align:center;
-    width:200px;
-    }
-    
-    .card img{
-    width:100%;
-    border-radius:10px;
-    }
-    
-    .whatsapp{
-    background:#25D366;
-    color:white;
-    padding:10px 20px;
-    text-decoration:none;
-    border-radius:5px;
-    }
-    
-    footer{
-    text-align:center;
-    padding:20px;
-    background:#ff4d6d;
-    color:white;
-    }
+}
