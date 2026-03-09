@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Monica Solomon — Florería Artesanal</title>
 
+  <!-- Favicon (icono en la pestaña) -->
+  <link rel="icon" type="image/png" href="img/logo_monica.png"/>
+
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
 
@@ -23,6 +26,16 @@
     }
     header {
       transition: transform 0.35s ease;
+    }
+
+    .logo-icon-img {
+      height: 55px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-icon-img:hover {
+      transform: scale(1.08);
     }
 
     /* ── MAPA ── */
@@ -110,7 +123,7 @@
 <!-- ══ HEADER ══════════════════════════════ -->
 <header>
   <div class="logo-container">
-    <div class="logo-icon">🌿</div>
+    <img src="img/logo_monica.png" alt="Logo Monica Solomon" class="logo-icon-img"/>
     <div class="logo-text">
       Monica Solomon
       <span>florería artesanal</span>
@@ -194,7 +207,7 @@
         <img src="img/popular.png" alt="Rosas Rojas"/>
         <div class="card-badge">⭐ Popular</div>
       </div>
-      <h3>Docena de Rosas</h3>
+      <h3>Rosas</h3>
       <div class="precio"></div>
       <p class="descripcion">Rosas rojas frescas en caja elegante, perfectas para regalar.</p>
       <a href="https://wa.me/526624232258?text=Hola!%20Me%20interesa%20la%20docena%20de%20rosas" class="btn-catalogo">Pedir ahora</a>
@@ -224,7 +237,7 @@
 
     <div class="card">
       <div class="card-img-wrap">
-        <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=600&q=80" alt="Girasoles"/>
+        <img src="img/girasoles.png" alt="Girasoles"/>
       </div>
       <h3>Ramo de Girasoles</h3>
       <div class="precio"></div>
