@@ -4,119 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Monica Solomon — Florería Artesanal</title>
-
-  <!-- Favicon (icono en la pestaña) -->
   <link rel="icon" type="image/png" href="img/logo_monica.png"/>
-
-  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-
-  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css"/>
-
-  <style>
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    header {
-      transition: transform 0.35s ease;
-    }
-
-    .logo-icon-img {
-      height: 55px;
-      width: auto;
-      transition: transform 0.3s ease;
-    }
-
-    .logo-icon-img:hover {
-      transform: scale(1.08);
-    }
-
-    /* ── MAPA ── */
-    .mapa-wrap {
-      max-width: 750px;
-      margin: 30px auto 0;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid var(--verde-oliva);
-      box-shadow: 0 8px 30px rgba(166,169,91,0.2);
-      position: relative;
-    }
-
-    .mapa-wrap iframe {
-      width: 100%;
-      height: 300px;
-      display: block;
-      border: none;
-      filter: saturate(0.6) sepia(0.25) brightness(0.97);
-    }
-
-    .mapa-overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(93,96,51,0.85));
-      padding: 20px 24px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .mapa-info {
-      text-align: left;
-    }
-
-    .mapa-info strong {
-      display: block;
-      color: #d4e08a;
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      margin-bottom: 3px;
-    }
-
-    .mapa-info span {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.78rem;
-      letter-spacing: 0.03em;
-    }
-
-    .mapa-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--verde-oliva);
-      color: white;
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 50px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      transition: 0.3s;
-      white-space: nowrap;
-    }
-
-    .mapa-btn:hover {
-      background: #d4e08a;
-      color: var(--verde-oscuro);
-      transform: translateY(-2px);
-    }
-
-    .horario-texto {
-      margin-top: 14px;
-      font-size: 0.88rem;
-      color: var(--texto);
-      opacity: 0.7;
-      letter-spacing: 0.03em;
-    }
-  </style>
 </head>
 <body>
 
@@ -130,23 +20,40 @@
     </div>
   </div>
   <nav>
-    <a href="#categorias">colecciones</a>
-    <a href="#productos">flores</a>
-    <a href="#nosotros">nosotros</a>
-    <a href="https://wa.me/526624232258">pedir ahora</a>
+    <a href="#categorias">Colecciones</a>
+    <a href="#productos">Flores</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="https://wa.me/526624232258">Pedir ahora</a>
   </nav>
 </header>
 
-<!-- ══ HERO ════════════════════════════════ -->
+<!-- ══ HERO CON CARRUSEL ═══════════════════ -->
 <section class="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide">
+      <img src="img/baner.png" alt="Flores 1"/>
+    </div>
+    <div class="hero-slide">
+      <img src="img/baner1.png" alt="Flores 2"/>
+    </div>
+    <div class="hero-slide">
+      <img src="img/baner2.png" alt="Flores 3"/>
+    </div>
+    <div class="hero-slide">
+      <img src="img/baner3.png" alt="Flores 4"/>
+    </div>
+  </div>
+
+  <button class="hero-arrow prev" id="heroPrev">&#8592;</button>
+  <button class="hero-arrow next" id="heroNext">&#8594;</button>
+  <div class="hero-dots" id="heroDots"></div>
+
   <div class="hero-content">
     <div class="hero-badge">✦ Entregas a domicilio ✦</div>
     <h2>Flores que <em>hablan</em><br>por tu corazón</h2>
     <p>Arreglos florales artesanales para cada momento especial. Cultivados con amor, entregados con cuidado.</p>
     <div class="hero-buttons">
-      <a class="whatsapp-main" href="https://wa.me/526624232258">
-        💬 Pedir por WhatsApp
-      </a>
+      <a class="whatsapp-main" href="https://wa.me/526624232258">💬 Pedir por WhatsApp</a>
       <a class="btn-secondary" href="#productos">Ver colección</a>
     </div>
   </div>
@@ -272,7 +179,7 @@
 
 <!-- ══ NOSOTROS ════════════════════════════ -->
 <section id="nosotros">
-  <div class="section-title" style="padding-bottom:0;">
+  <div class="section-title">
     <h2>Sobre Nosotros</h2>
     <div class="divider">
       <div class="divider-line"></div>
@@ -281,9 +188,9 @@
     </div>
   </div>
 
-  <p class="descripcion-nosotros" style="margin-top:24px;">
-    Somos una florería familiar, llevando belleza y color a los momentos más 
-    importantes de tu vida. Cada arreglo es hecho a mano con flores frescas seleccionadas diariamente, 
+  <p class="descripcion-nosotros">
+    Somos una florería familiar, llevando belleza y color a los momentos más
+    importantes de tu vida. Cada arreglo es hecho a mano con flores frescas seleccionadas diariamente,
     porque creemos que las flores son el lenguaje más hermoso del alma.
   </p>
 
@@ -310,13 +217,10 @@
     </div>
   </div>
 
-  <!-- ── MAPA EMBEBIDO ── -->
   <div class="mapa-wrap">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3484.4!2d-110.9559!3d29.0729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce84b3e6a2e4c7%3A0x0!2sBulevar+L%C3%A1zaro+C%C3%A1rdenas+392b%2C+Isssteson+Nte.%2C+83139+Hermosillo%2C+Son.!5e0!3m2!1ses!2smx!4v1700000000000"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
     <div class="mapa-overlay">
       <div class="mapa-info">
@@ -348,13 +252,12 @@
   <strong>Monica Solomon — Florería Artesanal</strong>
   Hecho con 🌿 y mucho amor · Todos los derechos reservados © 2025
   <br/>
-  <small style="opacity:0.6;">📞 (662) 423-2258</small>
+  <small>📞 (662) 423-2258</small>
 </footer>
 
 <!-- WhatsApp flotante -->
 <a class="whatsapp-float" href="https://wa.me/526624232258" title="Escríbenos por WhatsApp">💬</a>
 
-<!-- JavaScript -->
 <script src="script.js"></script>
 
 </body>
