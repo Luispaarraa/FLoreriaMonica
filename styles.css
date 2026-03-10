@@ -100,7 +100,7 @@ nav a:hover::after { width: 100%; }
   padding: 120px 20px;
   background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)),
-    url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=1600&q=80') center/cover no-repeat;
+    url('https://scontent-hou1-1.xx.fbcdn.net/v/t39.30808-6/481247103_661543866447290_3422758679497127146_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGj_n6yiswDUfH3pdKZUh40MeP8YyveQBox4_xjK95AGnCAYCr7Q1c1BvpJvcd-KS-9Ahv600GY7EDvcKHY9M3H&_nc_ohc=4OAVaL7wTrIQ7kNvwGkzI9k&_nc_oc=AdlQzE_nMvi1c77-kc7Jn4jKZlb0zU3EPlU_rsQUyWUoqwCtylmUxp3RCbzWkT4MbCE&_nc_zt=23&_nc_ht=scontent-hou1-1.xx&_nc_gid=ZhbwmdGcCIqZrVjwhQ-JpQ&_nc_ss=8&oh=00_AfzpZCeH-ckx4iebEMLAQ6EL9uAoAVc5orJpG1YUEpE3pA&oe=69B62D34') center/cover no-repeat;
   color: white;
   overflow: hidden;
 }
@@ -159,7 +159,7 @@ nav a:hover::after { width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #667338;
+  background: #667338 ;
   color: white;
   padding: 15px 32px;
   text-decoration: none;
@@ -235,7 +235,7 @@ nav a:hover::after { width: 100%; }
 }
 
 .categoria {
-  width: 190px;
+  width: 240px;
   text-decoration: none;
   color: var(--texto);
   background: var(--blanco);
@@ -254,7 +254,7 @@ nav a:hover::after { width: 100%; }
 
 .categoria img {
   width: 100%;
-  height: 140px;
+  height: 220px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
