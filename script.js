@@ -54,7 +54,92 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Carrusel Hero ── */
+  /* ── Galería por categoría ── */
+
+  // Define las fotos de cada categoría
+  // Agrega o quita fotos según las que tengas en cada carpeta
+  const galeriasData = {
+    amarillas: {
+      fotos: [
+        'img/galeria/amarillas/1.jpg',
+        'img/galeria/amarillas/2.jpg',
+        'img/galeria/amarillas/3.jpg',
+        'img/galeria/amarillas/4.jpg',
+      ]
+    },
+    arreglos: {
+      fotos: [
+        'img/galeria/arreglos/1.jpg',
+        'img/galeria/arreglos/2.jpg',
+        'img/galeria/arreglos/3.jpg',
+        'img/galeria/arreglos/4.jpg',
+      ]
+    },
+    ramos: {
+      fotos: [
+        'img/galeria/ramos/1.jpg',
+        'img/galeria/ramos/2.jpg',
+        'img/galeria/ramos/3.jpg',
+        'img/galeria/ramos/4.jpg',
+      ]
+    },
+    jarrones: {
+      fotos: [
+        'img/galeria/jarrones/1.jpg',
+        'img/galeria/jarrones/2.jpg',
+        'img/galeria/jarrones/3.jpg',
+        'img/galeria/jarrones/4.jpg',
+      ]
+    },
+    condolencias: {
+      fotos: [
+        'img/galeria/condolencias/1.jpg',
+        'img/galeria/condolencias/2.jpg',
+        'img/galeria/condolencias/3.jpg',
+        'img/galeria/condolencias/4.jpg',
+      ]
+    }
+  };
+
+  const modal      = document.getElementById('galeriaModal');
+  const grid       = document.getElementById('galeriaGrid');
+  const titulo     = document.getElementById('galeriaTitulo');
+  const cerrarBtn  = document.getElementById('galeriaCerrar');
+
+  document.querySelectorAll('.categoria').forEach(cat => {
+    cat.addEventListener('click', (e) => {
+      e.preventDefault();
+      const key    = cat.dataset.galeria;
+      const nombre = cat.dataset.titulo;
+      const data   = galeriasData[key];
+      if (!data) return;
+
+      titulo.textContent = nombre;
+      grid.innerHTML = '';
+
+      data.fotos.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = nombre;
+        img.loading = 'lazy';
+        grid.appendChild(img);
+      });
+
+      modal.classList.add('activo');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  cerrarBtn.addEventListener('click', cerrarModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) cerrarModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarModal(); });
+
+  function cerrarModal() {
+    modal.classList.remove('activo');
+    document.body.style.overflow = '';
+  }
+
+
   const slides   = document.getElementById('heroSlides');
   const dotsWrap = document.getElementById('heroDots');
   if (!slides || !dotsWrap) return;

@@ -629,7 +629,110 @@ footer strong {
 
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
+/* ── GALERÍA MODAL ── */
+.galeria-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+}
+
+.galeria-modal.activo { display: flex; align-items: flex-start; justify-content: center; padding: 40px 20px; }
+
+.galeria-modal-content {
+  background: var(--crema-fondo);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+.galeria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  border-bottom: 2px solid var(--verde-oliva);
+  background: var(--blanco);
+}
+
+.galeria-header h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--verde-oliva);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.galeria-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--verde-oscuro);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.galeria-cerrar:hover { background: var(--crema-oscuro); }
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 24px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 25px rgba(166,169,91,0.3);
+  border-color: var(--verde-oliva);
+}
+
+.galeria-hint {
+  text-align: center;
+  padding: 16px 24px 24px;
+  font-size: 0.9rem;
+  color: var(--texto);
+  opacity: 0.75;
+}
+
+.galeria-hint a {
+  color: var(--verde-oliva);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.galeria-hint a:hover { text-decoration: underline; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── RESPONSIVE GALERÍA ── */
+@media (max-width: 640px) {
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 14px; }
+  .galeria-grid img { height: 150px; }
+}
 @media (max-width: 640px) {
   header { flex-direction: column; padding: 16px; gap: 12px; }
   nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
