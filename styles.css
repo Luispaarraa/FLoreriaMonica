@@ -73,7 +73,7 @@ nav a {
   margin-left: 20px;
   font-weight: 700;
   font-size: 0.85rem;
-  text-transform: lowercase;
+  text-transform: none;
   letter-spacing: 0.05em;
   position: relative;
   transition: color 0.3s;
