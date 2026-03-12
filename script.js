@@ -1,6 +1,5 @@
 /* ══════════════════════════════════════
-   Monica Solomon — Florería Artesanal
-   script.js
+  
 ══════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
